@@ -15,10 +15,10 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t restapi-feeds --build-arg POSTGRESS_USERNAME=$POSTGRESS_USERNAME .
+  - docker build --build-arg POSTGRESS_USERNAME=HOLA -t restapi-feeds .
   - docker tag restapi-feeds adiazarroyo/restapi-feeds:latest
 
 # Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push adiazarroyo/restapi-feeds
+  - docker push adiazarroyo/restapi-feed
