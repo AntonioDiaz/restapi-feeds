@@ -12,7 +12,8 @@ import { config } from './config/config';
 
 (async () => {
 
-  console.log('config -> ' + config.dev.database)
+  console.log ('**process.env.POSTGRESS_USERNAME '+ process.env.POSTGRESS_USERNAME);
+  console.log('**config -> ' + config.dev.database);
 
   await sequelize.addModels(V0_FEED_MODELS);  
   await sequelize.sync();
