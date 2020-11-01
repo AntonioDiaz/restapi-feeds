@@ -7,7 +7,13 @@ import bodyParser from 'body-parser';
 
 import { V0_FEED_MODELS } from './controllers/v0/model.index';
 
+
+import { config } from './config/config';
+
 (async () => {
+
+  console.log('config -> ' + config.dev.database)
+
   await sequelize.addModels(V0_FEED_MODELS);  
   await sequelize.sync();
 
