@@ -12,6 +12,7 @@ import { config } from './config/config';
 
 (async () => {
 
+  console.log ('**DOCKER_USERNAME '+ process.env.DOCKER_USERNAME);
   console.log ('**process.env.POSTGRESS_USERNAME '+ process.env.POSTGRESS_USERNAME);
   console.log('**config -> ' + config.dev.database);
 
